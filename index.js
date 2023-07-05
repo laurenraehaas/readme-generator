@@ -48,7 +48,7 @@ const questions = [
           type: 'list', 
           message: 'What licence do you have?',
           name: 'license',
-          choices: ['ISC', 'MIT'],
+          choices: ['Mozilla Public License 2.0', 'MIT'],
           category: 'Licence'
         },
         {
