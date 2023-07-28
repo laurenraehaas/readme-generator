@@ -49,9 +49,11 @@ function generateMarkdown(data) {
   const license = data.license
   const licenseBadgeUrl = renderLicenseBadge(license)
   const licenseLink = renderLicenseLink(license)
+  const tableofContents = generateTableofContents()
   const readMe = `
     ${data.title}
     ![License Badge](${licenseBadgeUrl})
+    
     ## Description
     ${data.description}
     ${tableofContents}
@@ -67,7 +69,7 @@ function generateMarkdown(data) {
 
     ## License
     This project was made under the ${data.license}. ${data.licenseLink}
-    
+
     ## Questions
     ${data.email}
     ${data.reach}`
