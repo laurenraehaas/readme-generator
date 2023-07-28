@@ -1,3 +1,19 @@
+function generateTableofContents() {
+  const contents = [
+    'Installation',
+    'Usage',
+    'Contributing',
+    'License',
+    'Questions'
+  ]
+  let tableofContents = '## Table of Contents'
+  contents.forEach((content) => {
+    const contentLink = content.toLowerCase().replace(/\s+/g, '-')
+    tableofContents += `- [${content}](#${contentLink})`
+  })
+  return tableofContents
+}
+
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
@@ -36,11 +52,23 @@ function generateMarkdown(data) {
   const readMe = `
     ${data.title}
     ![License Badge](${licenseBadgeUrl})
+    ## Description
     ${data.description}
+    ${tableofContents}
+
+    ## Installation
     ${data.installation}
+
+    ## Usage
     ${data.usage}
+
+    ## Contribution
     ${data.contribution}
+
+    ## License
     This project was made under the ${data.license}. ${data.licenseLink}
+    
+    ## Questions
     ${data.email}
     ${data.reach}`
 
