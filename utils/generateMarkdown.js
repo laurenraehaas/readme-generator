@@ -51,9 +51,10 @@ function generateMarkdown(data) {
   const licenseLink = renderLicenseLink(license)
   const tableofContents = generateTableofContents()
   const readMe = `
-    ${data.title}
-    ![License Badge](${licenseBadgeUrl})
+    #${data.title}
     
+    ![License Badge](${licenseBadgeUrl})
+
     ## Description
     ${data.description}
     ${tableofContents}
