@@ -58,6 +58,19 @@ const questions = [
           name: 'email',
           category: "Questions",
         },
+        {
+          type: 'input',
+          message: 'What is your Github username?',
+          name: 'github',
+          category: 'Questions',
+        },
+        {
+          type: 'list',
+          message: 'What is the best way to reach you?',
+          name: 'reach',
+          choices: ['Email', 'Github', 'Phone'],
+          category: 'Questions',
+        },
 ]
   
 // TODO: Create a function to write README file

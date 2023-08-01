@@ -5,8 +5,9 @@ function generateTableofContents() {
     'Contributing',
     'License',
     'Questions'
-  ]
-  let tableofContents = '## Table of Contents'
+  ];
+
+  let tableofContents = '## Table of Contents\n'
   contents.forEach((content) => {
     const contentLink = content.toLowerCase().replace(/\s+/g, '-')
     tableofContents += `- [${content}](#${contentLink})`
@@ -51,12 +52,13 @@ function generateMarkdown(data) {
   const licenseLink = renderLicenseLink(license)
   const tableofContents = generateTableofContents()
   const readMe = `
-    #${data.title}
+    # ${data.title}
     
     ![License Badge](${licenseBadgeUrl})
 
     ## Description
     ${data.description}
+
     ${tableofContents}
 
     ## Installation
@@ -69,11 +71,14 @@ function generateMarkdown(data) {
     ${data.contribution}
 
     ## License
-    This project was made under the ${data.license}. ${data.licenseLink}
+    This project was made under the ${data.license}. 
+    ${licenseLink}
 
     ## Questions
     ${data.email}
-    ${data.reach}`
+    ${data.github}
+    The best way to reach me is by ${data.reach}
+    `
 
     return readMe
 };
